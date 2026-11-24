@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import Hero from './components/Hero';
 import CustomCursor from './components/CustomCursor';
 import FloatingTechBar from './components/FloatingTechBar';
@@ -16,14 +16,6 @@ export default function App() {
     return () => clearTimeout(timer);
   }, [isSettledParam]);
 
-  // Replay entrance animation on demand
-  const handleReplay = useCallback(() => {
-    setIsEntered(false);
-    setTimeout(() => {
-      setIsEntered(true);
-    }, 100);
-  }, []);
-
   return (
     <div className="w-full min-h-screen bg-[#080808] text-white lg:h-screen lg:overflow-hidden relative font-sans selection:bg-[#e50914] selection:text-white overflow-x-hidden overflow-y-auto lg:overflow-y-hidden">
       {/* Interactive Custom Cursor */}
@@ -31,7 +23,7 @@ export default function App() {
 
       {/* Main Full-Size Hero Screen with Dramatic In-Page Entrance */}
       <main className="w-full h-full">
-        <Hero isEntered={isEntered} onReplay={handleReplay} />
+        <Hero isEntered={isEntered} />
       </main>
 
       {/* Floating Bottom Tech Bar with Entrance Slide */}

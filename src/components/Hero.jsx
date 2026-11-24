@@ -3,7 +3,7 @@ import { Sparkles } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData';
 import KineticLinkRoller from './KineticLinkRoller';
 
-export default function Hero({ isEntered = false, onReplay }) {
+export default function Hero({ isEntered = false }) {
   return (
     <section className="relative w-full min-h-screen lg:h-screen lg:min-h-screen bg-[#080808] text-white flex flex-col justify-between p-4 sm:p-6 md:p-8 lg:p-12 pb-32 sm:pb-36 lg:pb-12 select-none">
       
@@ -14,9 +14,9 @@ export default function Hero({ isEntered = false, onReplay }) {
         }`}
       ></div>
 
-      {/* TOP HEADER SUBHEAD BAR WITH REPLAY BUTTON */}
+      {/* TOP HEADER SUBHEAD BAR */}
       <div 
-        className={`w-full flex items-center justify-between text-[11px] sm:text-xs md:text-sm tracking-[0.2em] sm:tracking-[0.25em] uppercase font-display text-zinc-400 z-30 transition-all duration-700 ease-out mb-4 lg:mb-0 ${
+        className={`w-full flex items-center text-[11px] sm:text-xs md:text-sm tracking-[0.2em] sm:tracking-[0.25em] uppercase font-display text-zinc-400 z-30 transition-all duration-700 ease-out mb-4 lg:mb-0 ${
           isEntered ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-8'
         }`}
         style={{ transitionDelay: '80ms' }}
@@ -26,17 +26,6 @@ export default function Hero({ isEntered = false, onReplay }) {
           <span className="text-zinc-600">/</span>
           <span className="text-zinc-400">BACKEND ARCHITECT</span>
         </div>
-
-        {onReplay && (
-          <button
-            onClick={onReplay}
-            className="flex items-center gap-1.5 px-3 py-1 rounded-full border border-zinc-800/90 bg-zinc-900/60 hover:bg-[#e50914]/15 hover:border-[#e50914]/50 text-zinc-400 hover:text-white transition-all text-[10px] tracking-wider font-mono-code cursor-pointer pointer-events-auto"
-            title="Replay in-page entrance animation"
-          >
-            <span>↻</span>
-            <span>REPLAY ENTRANCE</span>
-          </button>
-        )}
       </div>
 
       {/* ================= DESKTOP STAGE (>= 1024px) ================= */}
