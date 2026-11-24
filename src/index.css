@@ -1,0 +1,235 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --crimson: #e50914;
+    --crimson-glow: rgba(229, 9, 20, 0.45);
+    --dark-base: #080808;
+    --card-surface: #121212;
+    --card-border: #222222;
+  }
+
+  body {
+    background-color: #080808;
+    color: #ffffff;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+}
+
+.font-bebas {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.05em;
+}
+
+.font-script {
+  font-family: 'Caveat', cursive;
+}
+
+.font-mono-code {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.font-display {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.font-editorial {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #080808;
+}
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #e50914;
+}
+
+/* Crimson glow effects */
+.crimson-glow {
+  box-shadow: 0 0 40px rgba(229, 9, 20, 0.28);
+}
+
+.crimson-border-glow:hover {
+  border-color: #e50914;
+  box-shadow: 0 0 25px rgba(229, 9, 20, 0.2);
+}
+
+.text-stroke-crimson {
+  -webkit-text-stroke: 1.5px #e50914;
+  color: transparent;
+}
+
+.text-stroke-crimson-solid {
+  -webkit-text-stroke: 1px rgba(229, 9, 20, 0.6);
+}
+
+/* Kinetic Marquee animation */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: 200%;
+  animation: marquee 26s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Pulse animation */
+@keyframes pulseDot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+.pulse-dot {
+  animation: pulseDot 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* ========================================================
+   Direct In-Page Entrance Animations (Pure GPU Accelerated CSS)
+   ======================================================== */
+@keyframes entranceGlow {
+  0% {
+    opacity: 0;
+    transform: scale(0.65);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes entranceHeader {
+  0% {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes entranceHeadline {
+  0% {
+    opacity: 0;
+    transform: translateY(60px) scale(0.9);
+  }
+  100% {
+    opacity: 0.95;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes entrancePortrait {
+  0% {
+    opacity: 0;
+    transform: translateY(120px) scale(0.92);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes entranceSlideLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-80px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes entranceSlideRight {
+  0% {
+    opacity: 0;
+    transform: translateX(80px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes entranceDock {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-entrance-glow {
+  animation: entranceGlow 1.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-entrance-header {
+  animation: entranceHeader 1s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+}
+
+.animate-entrance-headline {
+  animation: entranceHeadline 1.4s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
+}
+
+.animate-entrance-portrait {
+  animation: entrancePortrait 1.5s cubic-bezier(0.16, 1, 0.3, 1) 0.25s both;
+}
+
+.animate-entrance-title {
+  animation: entranceSlideLeft 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.35s both;
+}
+
+.animate-entrance-badge {
+  animation: entranceSlideLeft 1.1s cubic-bezier(0.16, 1, 0.3, 1) 0.5s both;
+}
+
+.animate-entrance-bio {
+  animation: entranceSlideLeft 1.1s cubic-bezier(0.16, 1, 0.3, 1) 0.6s both;
+}
+
+.animate-entrance-roller {
+  animation: entranceSlideLeft 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.7s both;
+}
+
+.animate-entrance-sparkle {
+  animation: entranceSlideRight 1.1s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both;
+}
+
+.animate-entrance-stat-0 {
+  animation: entranceSlideRight 1.1s cubic-bezier(0.16, 1, 0.3, 1) 0.5s both;
+}
+
+.animate-entrance-stat-1 {
+  animation: entranceSlideRight 1.1s cubic-bezier(0.16, 1, 0.3, 1) 0.6s both;
+}
+
+.animate-entrance-stat-2 {
+  animation: entranceSlideRight 1.1s cubic-bezier(0.16, 1, 0.3, 1) 0.7s both;
+}
+
+.animate-entrance-stat-3 {
+  animation: entranceSlideRight 1.1s cubic-bezier(0.16, 1, 0.3, 1) 0.8s both;
+}
+
+.animate-entrance-dock {
+  animation: entranceDock 1.3s cubic-bezier(0.16, 1, 0.3, 1) 0.65s both;
+}
