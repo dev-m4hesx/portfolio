@@ -127,34 +127,34 @@ export default function FloatingTechBar({ isEntered = false }) {
   return (
     <aside 
       aria-label="Languages and Tools Dock" 
-      className="fixed bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 z-40 w-[94vw] max-w-4xl select-none"
+      className="fixed bottom-3 sm:bottom-6 left-1/2 -translate-x-1/2 z-40 w-[95vw] sm:w-[90vw] max-w-4xl select-none"
     >
       
       {/* Floating Pill Dock inspired directly by Eszter Bial */}
       <div 
-        className={`relative w-full rounded-full bg-[#0d0d0d]/90 backdrop-blur-xl border border-zinc-800/90 hover:border-[#e50914]/60 py-2 sm:py-2.5 px-3 overflow-hidden shadow-[0_15px_45px_rgba(0,0,0,0.9)] transition-all duration-1000 ease-out group ${
+        className={`relative w-full rounded-full bg-[#0d0d0d]/90 backdrop-blur-xl border border-zinc-800/90 hover:border-[#e50914]/60 py-1.5 sm:py-2.5 px-3 overflow-hidden shadow-[0_15px_45px_rgba(0,0,0,0.9)] transition-all duration-1000 ease-out group ${
           isEntered ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-28 pointer-events-none'
         }`}
         style={{ transitionDelay: '600ms' }}
       >
         
         {/* Subtle Edge Fade Gradients */}
-        <div className="absolute top-0 left-0 w-16 h-full bg-gradient-to-r from-[#0d0d0d] to-transparent z-10 pointer-events-none"></div>
-        <div className="absolute top-0 right-0 w-16 h-full bg-gradient-to-l from-[#0d0d0d] to-transparent z-10 pointer-events-none"></div>
+        <div className="absolute top-0 left-0 w-10 sm:w-16 h-full bg-gradient-to-r from-[#0d0d0d] to-transparent z-10 pointer-events-none"></div>
+        <div className="absolute top-0 right-0 w-10 sm:w-16 h-full bg-gradient-to-l from-[#0d0d0d] to-transparent z-10 pointer-events-none"></div>
 
         {/* Running Marquee Track with exact Eszter Bial typography and Flower Smileys */}
-        <div className="animate-marquee flex items-center gap-6 sm:gap-8 whitespace-nowrap group-hover:[animation-play-state:paused]">
+        <div className="animate-marquee flex items-center gap-4 sm:gap-8 whitespace-nowrap group-hover:[animation-play-state:paused]">
           
           {/* Loop Set 1 */}
           {languages.map((item, idx) => (
-            <div key={`lang1-${idx}`} className="flex items-center gap-6 sm:gap-8 shrink-0">
+            <div key={`lang1-${idx}`} className="flex items-center gap-4 sm:gap-8 shrink-0">
               
               {/* Language Item with Logo & Editorial Serif Italic Name */}
-              <div className="flex items-center gap-2 group/item cursor-pointer">
-                <span className="group-hover/item:scale-110 transition-transform">
+              <div className="flex items-center gap-1.5 sm:gap-2 group/item cursor-pointer">
+                <span className="group-hover/item:scale-110 transition-transform [&>svg]:w-4 [&>svg]:h-4 sm:[&>svg]:w-5 sm:[&>svg]:h-5">
                   {item.logo}
                 </span>
-                <span className="font-editorial text-xl sm:text-2xl text-zinc-100 group-hover/item:text-[#e50914] transition-colors leading-none tracking-normal">
+                <span className="font-editorial text-base sm:text-xl md:text-2xl text-zinc-100 group-hover/item:text-[#e50914] transition-colors leading-none tracking-normal">
                   {item.name}
                 </span>
               </div>
@@ -162,7 +162,7 @@ export default function FloatingTechBar({ isEntered = false }) {
               {/* Exact Eszter Bial Flower Smiley Separator */}
               <div className="shrink-0 flex items-center justify-center">
                 <FlowerSmiley 
-                  className="w-5 h-5 sm:w-6 sm:h-5.5 hover:rotate-45 transition-transform duration-300" 
+                  className="w-4 h-4 sm:w-6 sm:h-5.5 hover:rotate-45 transition-transform duration-300" 
                   petalColor="#e50914" 
                   faceColor="#ffffff" 
                 />
@@ -173,14 +173,14 @@ export default function FloatingTechBar({ isEntered = false }) {
 
           {/* Loop Set 2 for seamless infinite scroll */}
           {languages.map((item, idx) => (
-            <div key={`lang2-${idx}`} className="flex items-center gap-6 sm:gap-8 shrink-0">
+            <div key={`lang2-${idx}`} className="flex items-center gap-4 sm:gap-8 shrink-0">
               
               {/* Language Item with Logo & Editorial Serif Italic Name */}
-              <div className="flex items-center gap-2 group/item cursor-pointer">
-                <span className="group-hover/item:scale-110 transition-transform">
+              <div className="flex items-center gap-1.5 sm:gap-2 group/item cursor-pointer">
+                <span className="group-hover/item:scale-110 transition-transform [&>svg]:w-4 [&>svg]:h-4 sm:[&>svg]:w-5 sm:[&>svg]:h-5">
                   {item.logo}
                 </span>
-                <span className="font-editorial text-xl sm:text-2xl text-zinc-100 group-hover/item:text-[#e50914] transition-colors leading-none tracking-normal">
+                <span className="font-editorial text-base sm:text-xl md:text-2xl text-zinc-100 group-hover/item:text-[#e50914] transition-colors leading-none tracking-normal">
                   {item.name}
                 </span>
               </div>
@@ -188,7 +188,7 @@ export default function FloatingTechBar({ isEntered = false }) {
               {/* Exact Eszter Bial Flower Smiley Separator */}
               <div className="shrink-0 flex items-center justify-center">
                 <FlowerSmiley 
-                  className="w-5 h-5 sm:w-6 sm:h-5.5 hover:rotate-45 transition-transform duration-300" 
+                  className="w-4 h-4 sm:w-6 sm:h-5.5 hover:rotate-45 transition-transform duration-300" 
                   petalColor="#e50914" 
                   faceColor="#ffffff" 
                 />

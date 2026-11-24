@@ -25,7 +25,7 @@ export default function App() {
   }, []);
 
   return (
-    <div className="w-screen h-screen min-h-screen bg-[#080808] text-white overflow-hidden relative font-sans selection:bg-[#e50914] selection:text-white">
+    <div className="w-full min-h-screen bg-[#080808] text-white lg:h-screen lg:overflow-hidden relative font-sans selection:bg-[#e50914] selection:text-white overflow-x-hidden overflow-y-auto lg:overflow-y-hidden">
       {/* Interactive Custom Cursor */}
       <CustomCursor />
 
