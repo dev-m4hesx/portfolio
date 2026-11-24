@@ -1,0 +1,9 @@
+# Ignore temporary local preview screenshots
+*.png
+!public/*.png
+!src/assets/*.png
+*.jpg
+!public/*.jpg
+node_modules
+.git
+dist
